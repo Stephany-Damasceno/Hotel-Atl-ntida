@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Reservas </title>
+</head>
+<style>
+    header {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: cornflowerblue;
+        height: 50%;
+    }
+
+    h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 50px;
+        color: cornflowerblue; 
+        padding-left: 90px;
+    }
+
+    body {
+        font-family:Arial, Helvetica, sans-serif;
+        margin: 0; 
+        background-color: gainsboro;
+    }
+    
+    .menu-container {
+        position: relative;
+    }
+
+    .menu-icon {
+        font-size: 40px;
+        cursor: pointer;
+        padding: 10px;
+        position: fixed;
+        top: 25px;
+        left: 10px;
+        z-index: 2;
+    }
+
+    .menu {
+        height: 100%;
+        width: 0;
+        position:fixed;
+        top: 0;
+        left: 0;
+        background-color: gainsboro;
+        overflow-x: hidden;
+        transition: 0.3s;
+        z-index: 1;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu ul li {
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        color: cornflowerblue;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menu ul li a:hover {
+        background-color: white;
+    }
+    
+    .reservation-container {
+    background-color: gainsboro;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h2 {
+    color: cornflowerblue;
+    margin-bottom: 20px;
+}
+
+h4 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;        
+    }
+
+    p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;  
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, button {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #fff;
+    color: cornflowerblue;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: deepskyblue;
+}
+
+#thankYouMessage {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: gainsboro;
+    color: cornflowerblue;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+</style> 
+<body> 
+<header> 
+    <h1> Hotel Atlântida </h1>
+    <div class="menu-container">
+        <div class="menu-icon" onclick="toggleMenu()"> &#9776; </div>
+        <nav class="menu" id="menu">
+            <ul>
+                <li> <a href="atlantida.html"> Home </a></li>
+                <li> <a href="sobre.html"> Sobre </a></li>
+                <li> <a href="servicos.html"> Serviços </a></li>
+                <li> <a href="contato.html"> Contato </a></li>
+                <li> <a href="reservas.html"> Reservas </a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="reservation-container">
+        <h2> Hotel Atlântida - Reserva </h2>
+        <form id="reservationForm" onsubmit="return showThankYouMessage()">
+            <label for="name"><h4>Nome:</h4></label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email"><h4>Email:</h4></label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="checkin"><h4>Data de Entrada:</h4></label>
+            <input type="date" id="checkin" name="checkin" required>
+
+            <label for="checkout"><h4>Data de Saída:</h4></label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label for="roomType"><h4>Tipos de Quartos:</h4></label>
+            <select id="roomType" name="roomType" required>
+                <option value="single">Solteiro</option>
+                <option value="double">Casal</option>
+                <option value="suite">Suíte</option>
+            </select>
+
+            <button type="submit"><h4>Reservar</h4></button>
+        </form>
+        <div id="thankYouMessage" style="display:none;">
+            <h2>Obrigada por reservar conosco!</h2>
+            <p>Estaremos aguardando você no Hotel Atlântida.</p>
+        </div>
+    </div>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        if (menu.style.width === '250px') {
+            menu.style.width = '0';
+        } else {
+            menu.style.width = '250px';
+        }
+    }
+        function showThankYouMessage() {
+            document.getElementById('reservationForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
+            return false;
+        }
+   </script>
+   <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Hotel Atlântida</h3>
+            <p>123 Nik. Nomikou, Oia, Santorini</p>
+            <p>Phone: +30 123 456 789</p>
+            <p>Email: info@hotelatlantida.com</p>
+        </div>
+        <div class="footer-bottom">
+        <p>&copy; 2024 Hotel Atlântida. Todos os direitos reservados.</p>
+    </div>
+</footer>
+</body>

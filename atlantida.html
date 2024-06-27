@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hotel Atlântida - O melhor hotel de Santorini!"> 
+    <title> Hotel Atlântida </title>
+</head>
+<style>
+    header {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: cornflowerblue;
+        height: 50%;
+    }
+
+    h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 50px;
+        color: cornflowerblue; 
+        padding-left: 90px;
+    }
+
+    body {
+        font-family:Arial, Helvetica, sans-serif;
+        margin: 0; 
+        background-color: gainsboro;
+    }
+    
+    .menu-container {
+        position: relative;
+    }
+
+    .menu-icon {
+        font-size: 40px;
+        cursor: pointer;
+        padding: 10px;
+        position: fixed;
+        top: 25px;
+        left: 10px;
+        z-index: 2;
+    }
+
+    .menu {
+        height: 100%;
+        width: 0;
+        position:fixed;
+        top: 0;
+        left: 0;
+        background-color: gainsboro;
+        overflow-x: hidden;
+        transition: 0.3s;
+        z-index: 1;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu ul li {
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        color: cornflowerblue;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menu ul li a:hover {
+        background-color: white;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+    }
+
+    .gallery img {
+        width: 300px;
+        height: auto;
+        margin: 5px;
+        cursor: pointer;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        transition: transform 0.2s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+
+    .modal {
+        display: none;
+        position:fixed;
+        z-index: 1;
+        padding-top: 60px;
+        left: 0;
+        top: 0; 
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0,9);
+    }
+
+    .modal-content {
+        position: relative;
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    .modal-content img {
+        margin: auto;
+        display: block;
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .modal-content .mySlides {
+        display: none;
+    }
+
+    .modal-content .prev {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6 ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    .modal-content .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .modal-content .prev:hover, .modal-content .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    .close {
+        position: absolute;
+        top: 15px; right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover, .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    h3 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 35px;
+        color: cornflowerblue; 
+        text-align: center;
+    }
+
+    h4 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: justify;
+        padding: 20px;        
+    }
+
+    p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: justify;
+        padding: 20px;        
+    }
+
+    footer {
+    background-color: gainsboro;
+    color: cornflowerblue;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+</style>
+<body>
+    <header> 
+        <h1> Hotel Atlântida </h1>
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()"> &#9776; </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li> <a href="atlantida.html"> Home </a></li>
+                    <li> <a href="sobre.html"> Sobre </a></li>
+                    <li> <a href="servicos.html"> Serviços </a></li>
+                    <li> <a href="contato.html"> Contato </a></li>
+                    <li> <a href="reservas.html"> Reservas </a></li>
+                </ul>
+            </nav>
+        </div>
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('menu');
+                if (menu.style.width === '250px') {
+                    menu.style.width = '0';
+                } else {
+                    menu.style.width = '250px';
+                }
+            }
+            function openModal() {
+                document.getElementById("myModal");
+            }
+            function closeModal() {
+                document.getElementById("myModal");
+            }
+            let slideIndex = 1;
+            showSlides(SlidesIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+            function showSlides(n) {
+                const slides = document.getElementsByClassName("mySlides");
+                if (n > slides.lenght) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.lenght }
+                for (let i = 0; i < slides.lenght; i++) {
+                    slides[i].style.display = "none"; 
+                }
+                slides[slideIndex - 1].style.display = "block"; 
+            }
+        </script>
+    </header>
+    <div class="gallery">
+        <img src="c:\Users\TEMP\Downloads\That looks stunning 🤩.jpg" onclick="openModal();currentSlide(1)">
+        <img src="c:\Users\TEMP\Downloads\📍Greece.jpg" onclick="openModal();currentSlide(2)">
+        <img src="c:\Users\TEMP\Downloads\Mykonos Greece Photography Landscape.jpg" onclick="openModal();currentSlide(3)">
+        <img src="c:\Users\TEMP\Downloads\0abb5d0a-31fe-43cf-b3b7-97e9803908c0.jpg" onclick="openModal();currentSlide(4)">
+        <img src="c:\Users\TEMP\Downloads\Santorini, Greece.jpg" onclick="openModal();currentSlide(5)">
+        <img src="c:\Users\TEMP\Downloads\Greece Instagram Pictures Aesthetic.jpg" onclick="openModal();currentSlide(6)">
+        <img src="c:\Users\TEMP\Downloads\ca6c0401-f314-4241-aec6-2b17d55b3d91.jpg" onclick="openModal();currentSlide(7)">
+        <img src="c:\Users\TEMP\Downloads\Santorini.jpg" onclick="openModal();currentSlide(8)">
+    </div>
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()"> &times; </span>
+        <div class="modal-content">
+            <div class="mySlides">
+                <img src="c:\Users\TEMP\Downloads\That looks stunning 🤩.jpg" alt="Imagem 1">
+            </div>
+            <div class="mySlides">
+                <img src="c:\Users\TEMP\Downloads\📍Greece.jpg" alt="Imagem 2">
+        </div>
+        <div class="mySlides">
+            <img src="c:\Users\TEMP\Downloads\Mykonos Greece Photography Landscape.jpg" alt="Imagem 3">
+        </div>
+        <div class="mySlides">
+            <img src="c:\Users\TEMP\Downloads\0abb5d0a-31fe-43cf-b3b7-97e9803908c0.jpg" alt="Imagem 4">
+    </div>
+    <div class="mySlides">
+        <img src="c:\Users\TEMP\Downloads\Santorini, Greece.jpg" alt="Imagem 5">
+</div>
+<div class="mySlides">
+    <img src="c:\Users\TEMP\Downloads\Greece Instagram Pictures Aesthetic.jpg" alt="Imagem 6">
+</div>
+<div class="mySlides">
+    <img src="c:\Users\TEMP\Downloads\ca6c0401-f314-4241-aec6-2b17d55b3d91.jpg" alt="Imagem 7">
+</div>
+<div class="mySlides">
+    <img src="c:\Users\TEMP\Downloads\Santorini.jpg" alt="Imagem 8">
+</div>
+    <a class="prev" onclick="plusSlides(-1)"> &#10094; </a>
+    <a class="next" onclick="plusSlides(1)"> &#10095; </a>
+    </div>
+    </div>
+    <h3> Descubra o Encanto de Santorini no Hotel Atlântida. </h3>
+    <h4> Situado nas encostas pitorescas de Santorini, o Hotel Atlântida é um santuário de luxo e tranquilidade, onde a beleza do Mar Egeu se funde com o conforto sofisticado. Com uma vista deslumbrante das famosas caldeiras e os céus azuis de Santorini, nossa propriedade oferece uma experiência inesquecível de hospitalidade e charme mediterrâneo. </h4>
+    <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Hotel Atlântida</h3>
+            <p>123 Nik. Nomikou, Oia, Santorini</p>
+            <p>Phone: +30 123 456 789</p>
+            <p>Email: info@hotelatlantida.com</p>
+        </div>
+        <div class="footer-bottom">
+        <p>&copy; 2024 Hotel Atlântida. Todos os direitos reservados.</p>
+    </div>
+</footer>
+</body>
+</html>

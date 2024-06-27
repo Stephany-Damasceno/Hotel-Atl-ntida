@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sobre </title>
+</head>
+<style>
+    header {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: cornflowerblue;
+        height: 50%;
+    }
+
+    h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 50px;
+        color: cornflowerblue; 
+        padding-left: 90px;
+    }
+
+    body {
+        font-family:Arial, Helvetica, sans-serif;
+        margin: 0; 
+        background-color: gainsboro;
+    }
+    
+    .menu-container {
+        position: relative;
+    }
+
+    .menu-icon {
+        font-size: 40px;
+        cursor: pointer;
+        padding: 10px;
+        position: fixed;
+        top: 25px;
+        left: 10px;
+        z-index: 2;
+    }
+
+    .menu {
+        height: 100%;
+        width: 0;
+        position:fixed;
+        top: 0;
+        left: 0;
+        background-color: gainsboro;
+        overflow-x: hidden;
+        transition: 0.3s;
+        z-index: 1;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu ul li {
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        color: cornflowerblue;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menu ul li a:hover {
+        background-color: white;
+    }
+
+    h3 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 35px;
+        color: cornflowerblue; 
+        text-align: center;
+    }
+
+    p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: justify;
+        padding: 20px;        
+    }
+
+    footer {
+    background-color: gainsboro;
+    color: cornflowerblue;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+</style> 
+<body> 
+    <header> 
+        <h1> Hotel Atlântida </h1>
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()"> &#9776; </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li> <a href="atlantida.html"> Home </a></li>
+                    <li> <a href="sobre.html"> Sobre </a></li>
+                    <li> <a href="servicos.html"> Serviços </a></li>
+                    <li> <a href="contato.html"> Contato </a></li>
+                    <li> <a href="reservas.html"> Reservas </a></li>
+                </ul>
+            </nav>
+        </div>
+   </header>
+   <script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        if (menu.style.width === '250px') {
+            menu.style.width = '0';
+        } else {
+            menu.style.width = '250px';
+        }
+    }
+   </script> 
+   <h3> Sobre Nós </h3>
+   <p> Bem-vindo ao Hotel Atlântida, onde a magia de Santorini encontra o conforto moderno. Situado no coração desta ilha encantadora, o Hotel Atlântida oferece uma experiência inesquecível com vistas deslumbrantes da caldeira e do mar Egeu. </p>
+   <p> Nossa história é inspirada pela lendária cidade submersa de Atlântida, que nos guia a criar um refúgio onde o luxo se encontra com a serenidade. Cada detalhe do nosso hotel foi cuidadosamente planejado para proporcionar uma estadia excepcional, combinando a arquitetura tradicional das Cíclades com um toque contemporâneo. </p>
+   <p> O Hotel Atlântida conta com acomodações elegantes, gastronomia refinada, e um serviço dedicado que antecipa suas necessidades. Seja relaxando em nossas piscinas infinitas ou explorando os charmosos vilarejos e praias de Santorini, prometemos uma experiência que vai além do comum. </p>
+   <p> Convidamos você a descobrir um lugar onde a hospitalidade é uma arte, e cada momento é uma lembrança para ser apreciada. No Hotel Atlântida, sua estadia será nada menos que mágica. </p>
+   <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Hotel Atlântida</h3>
+            <p>123 Nik. Nomikou, Oia, Santorini</p>
+            <p>Phone: +30 123 456 789</p>
+            <p>Email: info@hotelatlantida.com</p>
+        </div>
+        <div class="footer-bottom">
+        <p>&copy; 2024 Hotel Atlântida. Todos os direitos reservados.</p>
+    </div>
+</footer>   
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Serviços </title>
+</head>
+<style>
+    header {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: cornflowerblue;
+        height: 50%;
+    }
+
+    h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 50px;
+        color: cornflowerblue; 
+        padding-left: 90px;
+    }
+
+    body {
+        font-family:Arial, Helvetica, sans-serif;
+        margin: 0; 
+        background-color: gainsboro;
+    }
+    
+    .menu-container {
+        position: relative;
+    }
+
+    .menu-icon {
+        font-size: 40px;
+        cursor: pointer;
+        padding: 10px;
+        position: fixed;
+        top: 25px;
+        left: 10px;
+        z-index: 2;
+    }
+
+    .menu {
+        height: 100%;
+        width: 0;
+        position:fixed;
+        top: 0;
+        left: 0;
+        background-color: gainsboro;
+        overflow-x: hidden;
+        transition: 0.3s;
+        z-index: 1;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu ul li {
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        color: cornflowerblue;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menu ul li a:hover {
+        background-color: white;
+    }
+
+    h2 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: justify;
+        padding: 20px;
+    }
+
+    h3 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 25px;
+        color: cornflowerblue; 
+        width: 60%;
+        margin: 0 auto;
+        text-align: justify;
+        padding: 20px;
+    }
+
+    h4 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: justify;
+        padding: 20px;        
+    }
+
+    .centro {
+            text-align: center; 
+    }
+
+    .centro img {
+        display: block; 
+        margin: 0 auto; 
+        max-width: 100%; 
+        border: 2px solid #ddd;
+        border-radius: 5px;
+    }
+
+    footer {
+    background-color: gainsboro;
+    color: cornflowerblue;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+    </style> 
+    <body> 
+    <header> 
+        <h1> Hotel Atlântida </h1>
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()"> &#9776; </div>
+            <nav class="menu" id="menu">
+                <ul>
+                    <li> <a href="atlantida.html"> Home </a></li>
+                    <li> <a href="sobre.html"> Sobre </a></li>
+                    <li> <a href="servicos.html"> Serviços </a></li>
+                    <li> <a href="contato.html"> Contato </a></li>
+                    <li> <a href="reservas.html"> Reservas </a></li>
+                </ul>
+            </nav>
+        </div>
+   </header>
+   <h2> Bem-vindo ao Hotel Atlântida, sua porta de entrada para uma experiência inesquecível em hospitalidade de luxo. </h2>
+   <div class="centro">
+        <img src="c:\Users\TEMP\Downloads\Santorini at night ✨.jpg" alt="Descrição da Imagem">
+    </div>
+   <script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        if (menu.style.width === '250px') {
+            menu.style.width = '0';
+        } else {
+            menu.style.width = '250px';
+        }
+    }
+   </script>
+ <h3> Descubra uma gama completa de serviços cuidadosamente projetados para atender às suas necessidades e elevar sua estadia a um novo patamar de conforto e conveniência. No Hotel Atlântida, oferecemos: </h3>  
+   <h4> 1. Acomodações de Classe Mundial: Quartos e suítes elegantemente decorados com vista para o mar, garantindo um ambiente relaxante e rejuvenescedor. </h4>
+   
+  <h4> 2. Gastronomia Excepcional: Experimente uma culinária de excelência em nossos restaurantes premiados, onde chefs renomados preparam pratos gourmet que prometem deliciar seu paladar. </h4>
+   
+   <h4> 3. Relaxamento e Bem-Estar: Mime-se com tratamentos revitalizantes no nosso spa de luxo, equipado com instalações modernas e uma variedade de massagens e terapias relaxantes. </h4>
+   
+   <h4> 4. Atividades Recreativas: Mantenha-se ativo em nossas instalações esportivas, que incluem uma piscina ao ar livre, academia bem equipada e opções de esportes aquáticos. </h4>
+   
+   <h4> 5. Serviços Personalizados: Nosso compromisso com o seu conforto se estende ao serviço de quarto 24 horas, concierge dedicado para assistência personalizada e serviços de lavanderia eficientes. </h4>
+   
+   <h4> 6. Eventos Memoráveis: Espaços elegantes para reuniões e eventos sociais, com suporte completo de organização e tecnologia de ponta para garantir o sucesso de cada ocasião. </h4>
+   
+   <h4> 7. Localização Privilegiada: Situado à beira-mar, o Hotel Atlântida oferece acesso fácil às principais atrações da cidade, garantindo uma experiência completa tanto para negócios quanto para lazer. </h4>
+   
+   <h3> Descubra a combinação perfeita de luxo, conforto e hospitalidade no Hotel Atlântida. Sua jornada começa aqui. Reserve sua estadia conosco e prepare-se para ser mimado em grande estilo. </h3>
+   <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Hotel Atlântida</h3>
+            <p>123 Nik. Nomikou, Oia, Santorini</p>
+            <p>Phone: +30 123 456 789</p>
+            <p>Email: info@hotelatlantida.com</p>
+        </div>
+        <div class="footer-bottom">
+        <p>&copy; 2024 Hotel Atlântida. Todos os direitos reservados.</p>
+    </div>
+</footer>   
+</body> 
+   

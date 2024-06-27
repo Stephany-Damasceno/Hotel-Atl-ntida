@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contato </title>
+</head>
+<style>
+    header {
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: cornflowerblue;
+        height: 50%;
+    }
+
+    h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 50px;
+        color: cornflowerblue; 
+        padding-left: 90px;
+    }
+
+    body {
+        font-family:Arial, Helvetica, sans-serif;
+        margin: 0; 
+        background-color: gainsboro;
+    }
+    
+    .menu-container {
+        position: relative;
+    }
+
+    .menu-icon {
+        font-size: 40px;
+        cursor: pointer;
+        padding: 10px;
+        position: fixed;
+        top: 25px;
+        left: 10px;
+        z-index: 2;
+    }
+
+    .menu {
+        height: 100%;
+        width: 0;
+        position:fixed;
+        top: 0;
+        left: 0;
+        background-color: gainsboro;
+        overflow-x: hidden;
+        transition: 0.3s;
+        z-index: 1;
+    }
+
+    .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .menu ul li {
+        padding: 8px 16px;
+        text-align: center;
+    }
+
+    .menu ul li a {
+        color: cornflowerblue;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menu ul li a:hover {
+        background-color: white;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        background-color: gainsboro;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        align-items: center;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info {
+        margin-bottom: 20px;
+    }
+
+    .contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ccc;
+    color: cornflowerblue;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: deepskyblue;
+}
+
+    .map-responsive {
+        overflow:hidden;
+        padding-bottom:56.25%;
+        position:relative;
+        height:0;
+    }
+
+    .map-responsive iframe {
+        left:0;
+        top:0;
+        height:100%;
+        width:100%;
+        position:absolute;
+    }
+
+    h2 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 30px;
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h3 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 25px;
+        color: cornflowerblue; 
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h4 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 20px;
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;        
+    }
+
+    p {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+        color: cornflowerblue;
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;  
+    }
+
+    footer {
+    background-color: gainsboro;
+    color: cornflowerblue;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+</style> 
+<body> 
+<header> 
+    <h1> Hotel Atlântida </h1>
+    <div class="menu-container">
+        <div class="menu-icon" onclick="toggleMenu()"> &#9776; </div>
+        <nav class="menu" id="menu">
+            <ul>
+                <li> <a href="atlantida.html"> Home </a></li>
+                <li> <a href="sobre.html"> Sobre </a></li>
+                <li> <a href="servicos.html"> Serviços </a></li>
+                <li> <a href="contato.html"> Contato </a></li>
+                <li> <a href="reservas.html"> Reservas </a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <h2> Entre em Contato </h2>
+    
+    <div class="contact-form">
+        <form action="#" method="post">
+            <label for="nome"><h4> Nome: </h4> </label><br>
+            <input type="text" id="nome" name="nome" required><br><br>
+            
+            <label for="email"><h4> E-mail: </h4> </label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="assunto"> <h4> Assunto: </h4> </label><br>
+            <input type="text" id="assunto" name="assunto" required><br><br>
+            
+            <label for="mensagem"> <h4> Mensagem: </h4> </label><br>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+            
+            <button type="submit"> Enviar </button>
+        </form>
+    </div>
+    
+    <div class="contact-info">
+        <h2> Informações de Contato </h2>
+        <p><strong> Endereço: </strong><br>
+        Nik. Nomikou, 10. Oia <br>
+        Em frente ao Mar Egeu <br> 
+        CEP: 12345-678</p>
+        
+        <p><strong> Telefone: </strong><br>
+        Reservas: (11) 98765-4321<br>
+        Recepção: (11) 87654-3210</p>
+        
+        <p><strong> E-mail: </strong><br>
+        info@hotelatlantida.com</p>
+        
+        <h2> Localização </h2>
+        <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12835.195008232024!2d25.370860608597717!3d36.462419507521915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1499cb8b1c44c1a9%3A0x400bd2ce2b9c750!2sOia%20847%2002%2C%20Gr%C3%A9cia!5e0!3m2!1spt-BR!2sbr!4v1719494330475!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    
+    <div class="emergency-info">
+        <h2> Emergência </h2>
+        <p><strong> Polícia: </strong> 190<br>
+        <strong> Bombeiros: </strong> 193<br>
+        <strong> Hospital Mais Próximo: </strong><br>
+        Hospital de Oia <br>
+        Av. Nikolaou, 123 - Oia, Santorini. </p>
+    </div>
+    
+    <p><a href="politica-de-privacidade.html">Política de Privacidade</a></p>
+</div>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        if (menu.style.width === '250px') {
+            menu.style.width = '0';
+        } else {
+            menu.style.width = '250px';
+        }
+    }
+   </script>
+   <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Hotel Atlântida</h3>
+            <p>123 Nik. Nomikou, Oia, Santorini</p>
+            <p>Phone: +30 123 456 789</p>
+            <p>Email: info@hotelatlantida.com</p>
+        </div>
+        <div class="footer-bottom">
+        <p>&copy; 2024 Hotel Atlântida. Todos os direitos reservados.</p>
+    </div>
+</footer>
+</body>
